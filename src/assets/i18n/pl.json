@@ -1,0 +1,20 @@
+{
+  "app": {
+    "test": "test pl"
+  },
+
+  "contact": {
+    "title": "Skontaktuj się ze mną: "
+  },
+
+  "nav": {
+    "label": {
+      "articles": "Artykuły",
+      "projects": "Projekty",
+      "contact": "Kontakt"
+    },
+    "language": "Zmień język",
+    "polish": "Polski",
+    "english": "Angielski"
+  }
+}
