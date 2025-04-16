@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand navbar-light bg-light">
+  <div class="nav-logo">
+    Logo
+  </div>
+  <div class="container-fluid">
+    <ul class="navbar-nav me-auto">
+      <li *ngFor="let link of navLinks" class="nav-item">
+        <a class="nav-link" [routerLink]="link.path">
+          {{ link.label | translate}}
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="language-selector">
+    <span>{{ 'nav.language' | translate }}</span>
+    <select [(ngModel)]="currentLanguage" (ngModelChange)="switchLanguage($event)">
+      <option value="en">
+        {{ 'nav.english' | translate }}
+      </option>
+      <option value="pl">
+        {{ 'nav.polish' | translate }}
+      </option>
+    </select>
+  </div>
+
+<!--  <div class="language-selector">-->
+<!--    <span>{{ 'nav.language' | translate }} </span>-->
+<!--    <button (click)="switchLanguage('en')">en</button>-->
+<!--    <button (click)="switchLanguage('pl')">pl</button>-->
+<!--  </div>-->
+</nav>
