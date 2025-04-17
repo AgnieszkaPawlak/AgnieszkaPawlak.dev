@@ -1,0 +1,22 @@
+<div class="language-selector">
+  <!-- Language icon that toggles the dropdown -->
+  <button class="language-icon" (click)="toggleDropdown()"  #languageIcon>
+    <i class="material-icons">translate</i>
+
+  </button>
+
+  @if(isDropdownOpen()) {
+    <div #dropdown class="dropdown"   [ngClass]="dropdownPosition()"
+    >
+      <ul>
+      @for(lang of ['en', 'pl']; track $index) {
+        <li
+          (click)="switchLanguage(lang)"
+          [class.active]="lang === currentLanguage()">
+          {{ ('nav.' + lang) | translate }}
+        </li>
+      }
+      </ul>
+    </div>
+  }
+</div>
