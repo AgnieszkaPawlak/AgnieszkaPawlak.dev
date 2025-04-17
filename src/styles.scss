@@ -1,1 +1,19 @@
 @use 'colors';
+@use 'sizes';
+
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600&display=swap');
+
+* {
+  font-family: 'Urbanist', system-ui, sans-serif;
+}
+
+html, body {
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
