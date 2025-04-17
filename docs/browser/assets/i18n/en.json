@@ -1,0 +1,19 @@
+{
+  "app": {
+    "test": "test english"
+  },
+
+  "contact": {
+    "title": "Contact with me : "
+  },
+
+  "nav": {
+    "label": {
+      "home": "Home",
+      "articles": "Articles",
+      "contact": "Contact"
+    },
+    "pl": "Polish",
+    "en": "English"
+  }
+}
