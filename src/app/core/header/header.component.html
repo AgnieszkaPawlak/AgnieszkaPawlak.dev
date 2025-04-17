@@ -12,21 +12,5 @@
     </ul>
   </div>
 
-  <div class="language-selector">
-    <span>{{ 'nav.language' | translate }}</span>
-    <select [(ngModel)]="currentLanguage" (ngModelChange)="switchLanguage($event)">
-      <option value="en">
-        {{ 'nav.english' | translate }}
-      </option>
-      <option value="pl">
-        {{ 'nav.polish' | translate }}
-      </option>
-    </select>
-  </div>
-
-<!--  <div class="language-selector">-->
-<!--    <span>{{ 'nav.language' | translate }} </span>-->
-<!--    <button (click)="switchLanguage('en')">en</button>-->
-<!--    <button (click)="switchLanguage('pl')">pl</button>-->
-<!--  </div>-->
+  <language-selector></language-selector>
 </nav>

@@ -3,10 +3,11 @@ import {CommonModule} from '@angular/common';
 import {RouterLink} from '@angular/router';
 import {TranslateModule, TranslatePipe, TranslateService} from '@ngx-translate/core';
 import {FormsModule} from '@angular/forms';
+import {LanguageSelectorComponent} from '../language-selector/language-selector.component';
 
 @Component({
   selector: 'app-header',
-  imports: [TranslateModule, CommonModule, RouterLink, TranslatePipe, FormsModule],
+  imports: [TranslateModule, CommonModule, RouterLink, TranslatePipe, FormsModule, LanguageSelectorComponent],
   templateUrl: './header.component.html',
   standalone: true,
   styleUrl: './header.component.scss'
@@ -20,8 +21,8 @@ export class HeaderComponent {
   }
 
   navLinks = [
+    {label: "nav.label.home", path: './home'},
     {label: "nav.label.articles", path: './articles'},
-    {label: "nav.label.projects", path: './projects'},
     {label: "nav.label.contact", path: './contact'}
   ]
 
