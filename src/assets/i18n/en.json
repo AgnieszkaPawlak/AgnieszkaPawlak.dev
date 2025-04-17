@@ -9,12 +9,11 @@
 
   "nav": {
     "label": {
+      "home": "Home",
       "articles": "Articles",
-      "projects": "Projects",
       "contact": "Contact"
     },
-    "language": "Switch language",
-    "polish": "Polish",
-    "english": "English"
+    "pl": "Polish",
+    "en": "English"
   }
 }

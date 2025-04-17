@@ -9,12 +9,11 @@
 
   "nav": {
     "label": {
+      "home": "Strona główna",
       "articles": "Artykuły",
-      "projects": "Projekty",
       "contact": "Kontakt"
     },
-    "language": "Zmień język",
-    "polish": "Polski",
-    "english": "Angielski"
+    "pl": "Polski",
+    "en": "Angielski"
   }
 }
