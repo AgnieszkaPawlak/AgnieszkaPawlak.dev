@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {RouterLink} from '@angular/router';
 import {TranslateModule, TranslatePipe, TranslateService} from '@ngx-translate/core';
 import {FormsModule} from '@angular/forms';
-import {LanguageSelectorComponent} from '../language-selector/language-selector.component';
+import {LanguageSelectorComponent} from '../../core/language-selector/language-selector.component';
 
 @Component({
   selector: 'app-header',
@@ -27,7 +27,6 @@ export class HeaderComponent {
   ]
 
   switchLanguage(language: string): void {
-    // this.translate.setDefaultLang(language);
     this.currentLanguage = language;
     this.translate.use(language);
 

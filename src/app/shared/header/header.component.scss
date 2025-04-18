@@ -5,10 +5,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: sizes.$padding-base sizes.$padding-lg;
+  padding: 0 sizes.$padding-lg;
 
   &.navbar-light {
-    background-color: #f8f9fa;
+    background-color: colors.$blue-light;
   }
 }
 
@@ -17,7 +17,6 @@
   color: colors.$gray-dark;
   display: flex;
   align-items: center;
-  padding-right: sizes.$padding-sm;
 }
 
 .navbar-brand {
@@ -27,7 +26,7 @@
   text-decoration: none;
 
   &:hover {
-    color: colors.$blue-hover;
+    color: colors.$blue-secondary;
   }
 }
 
