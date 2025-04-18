@@ -4,11 +4,13 @@
   </div>
   <div class="container-fluid">
     <ul class="navbar-nav me-auto">
-      <li *ngFor="let link of navLinks" class="nav-item">
-        <a class="nav-link" [routerLink]="link.path">
-          {{ link.label | translate}}
-        </a>
-      </li>
+      @for (link of navLinks; track link.label) {
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="link.path">
+            {{ link.label | translate}}
+          </a>
+        </li>
+      }
     </ul>
   </div>
 
