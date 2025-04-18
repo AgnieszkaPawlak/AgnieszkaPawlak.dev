@@ -1,0 +1,16 @@
+@use 'colors';
+
+.typing {
+  font-size: 24px;
+  white-space: wrap;
+  overflow: hidden;
+}
+.cursor {
+  border-right: 2px solid colors.$blue-secondary;
+  animation: blink 0.5s step-end infinite;
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
