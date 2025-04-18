@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import {FooterComponent} from './shared/footer/footer.component';
-import {HeaderComponent} from './core/header/header.component';
+import {HeaderComponent} from './shared/header/header.component';
 import {RouterOutlet} from '@angular/router';
-import {TranslateModule} from '@ngx-translate/core';
-import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-root',
