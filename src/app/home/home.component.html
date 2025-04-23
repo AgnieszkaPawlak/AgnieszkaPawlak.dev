@@ -1,11 +1,11 @@
 <header class="header">
-  <h1 class="title">Welcome!</h1>
-  <p class="subtitle">I’m a software developer with a passion for building intuitive and reliable software solutions.</p>
+  <h1 class="title">{{'home.welcome' | translate }}</h1>
+  <p class="subtitle">{{'home.description' | translate}}</p>
 </header>
 
 <main class="content">
   <section class="about">
-    <h2>About Me</h2>
+    <h2>{{'home.about' | translate | uppercase}}</h2>
       <app-typing-effect
         [texts]="texts()"
         [delay]="typingDelay()"
