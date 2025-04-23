@@ -1,7 +1,4 @@
 {
-  "app": {
-    "test": "test english"
-  },
   "home": {
     "welcome": "Welcome",
     "description": "I’m a software developer with a passion for building intuitive and reliable software solutions.",

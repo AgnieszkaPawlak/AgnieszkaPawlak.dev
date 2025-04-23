@@ -1,7 +1,4 @@
 {
-  "app": {
-    "test": "test pl"
-  },
   "home": {
     "welcome": "Witaj",
     "description": "Jestem programistą z pasją do tworzenia intuicyjnych i niezawodnych rozwiązań programistycznych.",
