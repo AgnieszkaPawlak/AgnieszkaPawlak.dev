@@ -1,6 +1,9 @@
-import { Component, effect, ElementRef, signal, ViewChild, WritableSignal } from '@angular/core';
-import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import {Component, ElementRef, OnInit, signal, ViewChild, WritableSignal} from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { NgClass } from '@angular/common';
+
+import { LanguageService } from '@app/shared/services/language.service';
+import {Language} from '@app/shared/config/language.config';
 
 @Component({
   selector: 'language-selector',
@@ -12,8 +15,9 @@ import { NgClass } from '@angular/common';
     NgClass
   ],
 })
-export class LanguageSelectorComponent {
-  currentLanguage: WritableSignal<string> = signal(this.getInitialLanguage());
+export class LanguageSelectorComponent implements OnInit {
+  currentLanguage: WritableSignal<string> = signal('');
+  supportedLanguages: Language[] = [];
 
   isDropdownOpen: WritableSignal<boolean> = signal(false);
   dropdownPosition: WritableSignal<'top' | 'bottom'> = signal('bottom');
@@ -21,10 +25,13 @@ export class LanguageSelectorComponent {
   @ViewChild('languageIcon', { static: false }) languageIcon!: ElementRef<HTMLElement>;
   @ViewChild('dropdown', { static: false }) dropdown!: ElementRef<HTMLElement>;
 
-  constructor(private translate: TranslateService) {
-    effect(() => {
-      this.translate.use(this.currentLanguage());
-    });
+  constructor(private languageService: LanguageService) {
+
+  }
+
+  ngOnInit(): void {
+    this.currentLanguage.set(this.languageService.currentLanguage());
+    this.supportedLanguages = this.languageService.getLanguages();
   }
 
   toggleDropdown(): void {
@@ -35,19 +42,13 @@ export class LanguageSelectorComponent {
       const dropdownElement = this.dropdown.nativeElement;
       const viewportHeight = window.innerHeight;
       const spaceBelow = viewportHeight - buttonRect.bottom;
-
       this.dropdownPosition.set(spaceBelow < dropdownElement.offsetHeight ? 'top' : 'bottom');
     }
   }
 
   switchLanguage(language: string): void {
-    this.currentLanguage.set(language);
-    localStorage.setItem('language', language);
+    this.languageService.changeLanguage(language);
     this.isDropdownOpen.set(false);
   }
 
-  private getInitialLanguage(): string {
-    const savedLanguage = localStorage.getItem('language');
-    return savedLanguage || 'en';
-  }
 }
