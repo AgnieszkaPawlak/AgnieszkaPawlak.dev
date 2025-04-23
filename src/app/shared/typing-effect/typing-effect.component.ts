@@ -1,4 +1,4 @@
-import {Component, Input, Signal, signal, effect, input} from '@angular/core';
+import {Component, Input, Signal, signal, effect, input, OnDestroy} from '@angular/core';
 
 @Component({
   selector: 'app-typing-effect',
@@ -6,55 +6,87 @@ import {Component, Input, Signal, signal, effect, input} from '@angular/core';
   standalone: true,
   styleUrl: './typing-effect.component.scss'
 })
-export class TypingEffectComponent {
+export class TypingEffectComponent implements OnDestroy {
+  readonly texts = input<string[]>([]);
+  readonly speed = input(100);
+  readonly delay = input(2000);
 
-  texts = input<string[]>([]);
-  speed=  input(100);
-  delay = input<number>(2000);
+  readonly displayText = signal('');
 
-  currentTextIndex = signal<number>(0);
-  displayText = signal<string>('');
-  showCursor = signal<boolean>(true);
+  private currentIndex = signal(0);
+  private typingFrameId: number | null = null;
+  private erasingFrameId: number | null = null;
+  private lastFrameTime = 0;
 
   constructor() {
     effect(() => {
-      this.startTypingLoop();
+      if (this.texts().length > 0) {
+        this.startTyping();
+      }
     });
   }
 
-  private startTypingLoop() {
-    this.displayText.set('');
-    const textList = this.texts();
-    if (!textList.length) return;
-
-    const textToType = textList[this.currentTextIndex()];
+  private startTyping(): void {
+    const texts = this.texts();
+    const current = texts[this.currentIndex()];
     let charIndex = 0;
+    this.displayText.set('');
+    this.clearFrames();
+    this.lastFrameTime = performance.now();
 
-    const typingInterval = setInterval(() => {
-      if (charIndex < textToType.length) {
-        this.displayText.set(this.displayText() + textToType[charIndex]);
-        charIndex++;
-      } else {
-        clearInterval(typingInterval);
-        setTimeout(() => this.eraseText(), this.delay());
+    const type = (time: number) => {
+      if (time - this.lastFrameTime >= this.speed()) {
+        if (charIndex < current.length) {
+          this.displayText.update(t => t + current[charIndex++]);
+          this.lastFrameTime = time;
+        } else {
+          this.typingFrameId = null;
+          setTimeout(() => this.startErasing(), this.delay());
+          return;
+        }
       }
-    }, this.speed());
+      this.typingFrameId = requestAnimationFrame(type);
+    };
+
+    this.typingFrameId = requestAnimationFrame(type);
   }
 
-  private eraseText() {
-    const textList = this.texts();
-    const textToErase = textList[this.currentTextIndex()];
-    let charIndex = textToErase.length;
+  private startErasing(): void {
+    const texts = this.texts();
+    const current = texts[this.currentIndex()];
+    let charIndex = current.length;
+    this.lastFrameTime = performance.now();
 
-    const eraseInterval = setInterval(() => {
-      if (charIndex > 0) {
-        this.displayText.set(this.displayText().slice(0, charIndex - 1));
-        charIndex--;
-      } else {
-        clearInterval(eraseInterval);
-        this.currentTextIndex.update((idx) => (idx + 1) % textList.length);
-        this.startTypingLoop();
+    const erase = (time: number) => {
+      if (time - this.lastFrameTime >= this.speed() / 2) {
+        if (charIndex > 0) {
+          this.displayText.update(t => t.slice(0, --charIndex));
+          this.lastFrameTime = time;
+        } else {
+          this.erasingFrameId = null;
+          this.currentIndex.update(i => (i + 1) % texts.length);
+          this.startTyping();
+          return;
+        }
       }
-    }, this.speed() / 2);
+      this.erasingFrameId = requestAnimationFrame(erase);
+    };
+
+    this.erasingFrameId = requestAnimationFrame(erase);
+  }
+
+  private clearFrames(): void {
+    if (this.typingFrameId != null) {
+      cancelAnimationFrame(this.typingFrameId);
+      this.typingFrameId = null;
+    }
+    if (this.erasingFrameId != null) {
+      cancelAnimationFrame(this.erasingFrameId);
+      this.erasingFrameId = null;
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.clearFrames();
   }
 }
