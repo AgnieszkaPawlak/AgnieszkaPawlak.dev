@@ -18,5 +18,8 @@
     },
     "pl": "Polish",
     "en": "English"
+  },
+  "footer" : {
+    "rights": "All rights reserved."
   }
 }

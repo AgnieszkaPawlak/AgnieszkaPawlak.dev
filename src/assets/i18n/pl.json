@@ -18,5 +18,9 @@
     },
     "pl": "Polski",
     "en": "Angielski"
+  },
+
+  "footer" : {
+    "rights": "Wszelkie prawa zastrzeżone."
   }
 }
