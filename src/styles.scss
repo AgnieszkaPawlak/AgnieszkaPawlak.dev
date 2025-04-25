@@ -8,6 +8,7 @@
 }
 
 html, body {
+  box-sizing: border-box;
   color: colors.$gray-dark;
   margin: 0;
   font-weight: 400;
