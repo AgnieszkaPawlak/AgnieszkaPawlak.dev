@@ -5,6 +5,9 @@
     "about": "O mnie",
     "aboutDescription": "Moje doświadczenie obejmuje dostarczanie wysokiej jakości bibliotek frontendowych oraz zapewnianie bezbłędnego działania aplikacji poprzez skrupulatne testowanie. Obecnie poszerzam swoją wiedzę, aby zostać pełnoprawnym deweloperem full-stack, ucząc się Javy i wzorców projektowych obiektowego programowania na backendzie."
   },
+  "skills": {
+    "title": "Techniczne umiejętności"
+  },
 
   "contact": {
     "title": "Skontaktuj się ze mną: "
