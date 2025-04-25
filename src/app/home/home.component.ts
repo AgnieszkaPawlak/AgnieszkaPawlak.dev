@@ -4,6 +4,7 @@ import {UpperCasePipe} from '@angular/common';
 
 import { TypingEffectComponent } from '@app/shared/typing-effect/typing-effect.component';
 import { LanguageService } from '@app/shared/services/language.service';
+import {SkillsComponent} from '@app/features/skills/skills.component';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,8 @@ import { LanguageService } from '@app/shared/services/language.service';
   imports: [
     TypingEffectComponent,
     TranslatePipe,
-    UpperCasePipe
+    UpperCasePipe,
+    SkillsComponent
   ],
   styleUrl: './home.component.scss'
 })
@@ -38,6 +40,4 @@ export class HomeComponent {
         this.texts.set(translatedTexts);
       });
   }
-
-
 }

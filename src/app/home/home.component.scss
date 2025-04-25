@@ -1,6 +1,13 @@
 @use 'sizes';
 @use 'colors';
 
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .header {
   text-align: center;
   padding: 2rem 1rem;
