@@ -1,0 +1,28 @@
+<div class="container-skills">
+  <h1 class="skills-header">{{'skills.title' | translate }}</h1>
+
+  <div class="skill-content">
+    <div class="skill-list">
+      @for (skill of data; track skill.id) {
+        <div class="technical-skill-container">
+          <h2 class="technical-skill-title">
+            {{skill.label }}
+          </h2>
+          <ul class="technical-skills-list">
+            @for (el of skill.content; track el.id) {
+              <li>
+                <p>
+                  {{el.title}}
+                </p>
+              </li>
+            }
+
+          </ul>
+        </div>
+
+      }
+
+    </div>
+  </div>
+
+</div>
