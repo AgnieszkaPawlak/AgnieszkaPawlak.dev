@@ -1,4 +1,4 @@
-import {Component, Input, Signal, signal, effect, input, OnDestroy} from '@angular/core';
+import { Component, signal, effect, input, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-typing-effect',
