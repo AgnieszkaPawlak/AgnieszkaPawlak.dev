@@ -1,7 +1,13 @@
 @use 'colors';
 @use 'sizes';
 
-.card {
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact {
   background-color: colors.$white-color;
   border: 1px solid colors.$card-border-color;
   border-radius: sizes.$border-radius-lg;
@@ -9,56 +15,57 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   max-width: sizes.$max-card-width;
   width: 100%;
-}
 
-.card h2 {
-  font-size: sizes.$font-xlarge;
-  text-transform: uppercase;
-  margin-bottom: sizes.$margin-base;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
+  &--center {
+    margin: sizes.$margin-lg;
+    text-align: center;
+  }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: sizes.$margin-base;
-}
+  &__header {
+    margin-bottom: sizes.$margin-base;
+  }
 
-label {
-  font-size: sizes.$font-medium;
-  margin-bottom: sizes.$margin-xs;
-  text-align: left;
-}
+  &__title {
+    font-size: sizes.$margin-base;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
 
-input[type="text"],
-input[type="email"] {
-  border: 1px solid colors.$input-border-color;
-  border-radius: sizes.$border-radius-sm;
-  padding: sizes.$padding-base;
-  font-size: sizes.$font-base;
-  width: 100%;
-  box-sizing: border-box;
-  transition: border-color 0.3s ease;
-}
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: sizes.$margin-base;
+  }
 
-.mx-auto {
-  display: block;
-  margin: sizes.$margin-lg auto;
+  &__label {
+    font-size: sizes.$font-medium;
+    margin-bottom: sizes.$margin-xs;
+    text-align: left;
+  }
+
+  &__input {
+    border: 1px solid colors.$input-border-color;
+    border-radius: sizes.$border-radius-sm;
+    padding: sizes.$padding-base;
+    font-size: sizes.$font-base;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
 }
 
 @media (max-width: 768px) {
-  .card {
+  .contact {
     padding: sizes.$padding-lg;
-  }
 
-  input[type="text"],
-  input[type="email"] {
-    font-size: sizes.$font-medium;
-    padding: 0.4rem; // Keep as-is or define new variable if desired
-  }
+    &__label {
+      font-size: sizes.$font-small;
+    }
 
-  label {
-    font-size: sizes.$font-small;
+    &input {
+      font-size: sizes.$font-medium;
+      padding: 0.4rem;
+    }
   }
 }
