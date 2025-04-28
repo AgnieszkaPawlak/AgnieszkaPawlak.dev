@@ -27,6 +27,14 @@
   max-width: sizes.$max-content-width;
   padding: sizes.$font-base;
   border-radius: sizes.$border-radius-lg;
+  width: 100%;
+
+  &__title {
+    text-align: center;
+  }
+}
+title {
+  text-align: center;
 }
 
 .about h2 {
