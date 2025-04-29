@@ -25,3 +25,14 @@ p {
   margin: 0;
 }
 
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &__main {
+    flex: 1;
+  }
+}
+
+
