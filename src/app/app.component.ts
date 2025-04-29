@@ -15,5 +15,5 @@ export class AppComponent {
   constructor(public layoutService: LayoutService) {
   }
 
-  title = 'my-blog';
+  title = 'portfolio';
 }
