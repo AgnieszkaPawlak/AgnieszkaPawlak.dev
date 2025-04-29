@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, signal, ViewChild, WritableSignal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, OnInit, signal, ViewChild, WritableSignal} from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { NgClass } from '@angular/common';
 
@@ -49,6 +49,11 @@ export class LanguageSelectorComponent implements OnInit {
   switchLanguage(language: string): void {
     this.languageService.changeLanguage(language);
     this.isDropdownOpen.set(false);
+    this.currentLanguage.set(this.languageService.currentLanguage());
+  }
+
+  getDropdownClass(): string {
+    return `language-selector__dropdown--${this.dropdownPosition()}`;
   }
 
 }

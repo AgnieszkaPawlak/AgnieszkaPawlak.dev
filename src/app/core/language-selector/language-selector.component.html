@@ -1,15 +1,14 @@
 <div class="language-selector">
-  <button class="language-icon" (click)="toggleDropdown()"  #languageIcon>
+  <button class="language-selector__button" (click)="toggleDropdown()"  #languageIcon>
     <i class="material-icons">translate</i>
   </button>
-
   @if(isDropdownOpen()) {
-    <div #dropdown class="dropdown"   [ngClass]="dropdownPosition()">
-      <ul>
+    <div #dropdown class="language-selector__dropdown"   [ngClass]="getDropdownClass()">
+      <ul class="language-selector__list">
       @for(lang of supportedLanguages; track $index) {
-        <li
+        <li class="language-selector__list-item"
           (click)="switchLanguage(lang.code)"
-          [class.active]="lang.code === currentLanguage()">
+          [class.language-selector__list-item--active]="lang.code === currentLanguage()">
           {{ ('nav.' + lang.code) | translate }}
         </li>
       }
