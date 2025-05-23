@@ -1,15 +1,28 @@
 @use 'colors';
+@use 'sizes';
 
-.typing {
-  font-size: 24px;
+.typing-effect {
+  font-size: sizes.$font-xlarge;
   white-space: wrap;
   overflow: hidden;
+
+  &__text {
+    display: inline;
+  }
+
+  &__cursor {
+    border-right: sizes.$border-s solid;
+    animation: blink 0.2s step-end infinite;
+    margin-left: sizes.$margin-xs;
+    display: inline-block;
+    height: 1.2rem;
+  }
 }
-.cursor {
-  border-right: 2px solid colors.$blue-secondary;
-  animation: blink 0.5s step-end infinite;
-}
+
 @keyframes blink {
+  0%, 100% {
+   border-color: colors.$blue-secondary;
+  }
   50% {
     border-color: transparent;
   }

@@ -21,3 +21,18 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 
+p {
+  margin: 0;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &__main {
+    flex: 1;
+  }
+}
+
+

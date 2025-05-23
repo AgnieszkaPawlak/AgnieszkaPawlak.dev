@@ -1,12 +1,12 @@
-<nav class="navbar navbar-expand navbar-light bg-light">
-  <div class="nav-logo">
+<nav class="navbar navbar--light">
+  <div class="navbar__logo">
     <p>&lt;AP/&gt;</p>
   </div>
-  <div class="container-fluid">
-    <ul class="navbar-nav me-auto">
+  <div class="navbar__container">
+    <ul class="navbar__nav">
       @for (link of navLinks; track link.label) {
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="link.path">
+        <li class="navbar__nav-item">
+          <a class="navbar__nav-item-link" [routerLink]="link.path">
             {{ link.label | translate}}
           </a>
         </li>
