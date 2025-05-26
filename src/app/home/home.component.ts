@@ -1,10 +1,10 @@
-import {Component, effect, signal} from '@angular/core';
+import { Component, effect, signal } from '@angular/core';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
-import {UpperCasePipe} from '@angular/common';
+import { UpperCasePipe } from '@angular/common';
 
 import { TypingEffectComponent } from '@app/shared/typing-effect/typing-effect.component';
 import { LanguageService } from '@app/shared/services/language.service';
-import {SkillsComponent} from '@app/features/skills/skills.component';
+import { SkillsComponent } from '@app/features/skills/skills.component';
 
 @Component({
   selector: 'app-home',

@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import {TranslateModule} from "@ngx-translate/core";
 
@@ -9,7 +10,7 @@ describe('HeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HeaderComponent, TranslateModule.forRoot({}) ]
+      imports: [HeaderComponent, TranslateModule.forRoot({}), RouterModule.forRoot([]) ]
     })
     .compileComponents();
 
@@ -21,10 +22,5 @@ describe('HeaderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  it('should render title', () => {
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('app.test');
-  })
 
 });

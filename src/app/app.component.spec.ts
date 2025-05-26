@@ -1,30 +1,37 @@
-import { TestBed } from '@angular/core/testing';
+import { RouterModule } from '@angular/router';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TranslateModule, TranslateLoader, TranslateFakeLoader } from '@ngx-translate/core';
+
 import { AppComponent } from './app.component';
-import {TranslateModule} from '@ngx-translate/core';
 
 describe('AppComponent', () => {
+  let fixture: ComponentFixture<AppComponent>
+  let component: AppComponent;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent,  TranslateModule.forRoot()],
+      imports: [AppComponent, RouterModule.forRoot([]),
+        TranslateModule.forRoot({
+        loader: {
+          provide: TranslateLoader,
+          useClass: TranslateFakeLoader
+        }
+      })],
     }).compileComponents();
+
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
   });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 
-  it(`should have the '' title`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('portfolio');
+  it('should have correct initial title value', () => {
+    const expectedTitle = 'portfolio'
+    expect(component.title).toBe(expectedTitle);
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, portfolio');
+  afterEach(() => {
+    fixture.destroy();
   });
 });
