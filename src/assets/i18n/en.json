@@ -3,7 +3,7 @@
     "welcome": "Welcome",
     "description": "I’m a software developer with a passion for building intuitive and reliable software solutions.",
     "about": "About me",
-    "aboutDescription": "My experience includes delivering high-quality frontend libraries and ensuring applications run flawlessly through meticulous testing. Currently, I am expanding my expertise to become a full-stack developer by learning Java and backend object-oriented design patterns."
+    "aboutDescription": "My experience includes delivering high-quality frontend libraries and ensuring applications run flawlessly through meticulous testing."
   },
   "skills": {
     "title": "Technical skills"
