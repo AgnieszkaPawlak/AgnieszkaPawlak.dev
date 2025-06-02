@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {TranslatePipe} from '@ngx-translate/core';
-import {LayoutService} from '@app/shared/services/layout.service';
+import {LayoutService} from '@app/core/layout/services/layout.service';
 
 @Component({
   selector: 'app-footer',

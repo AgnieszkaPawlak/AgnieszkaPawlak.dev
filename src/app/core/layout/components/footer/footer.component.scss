@@ -1,5 +1,5 @@
-@use 'sizes';
-@use 'colors';
+@use '../../../../../styles/sizes';
+@use '../../../../../styles/colors';
 
 .footer {
   display: flex;
@@ -7,7 +7,6 @@
   align-items: center;
   width: 100%;
   background-color: colors.$footer-background-color;
-  padding: sizes.$padding-base;
   z-index: 10;
   padding: 0.5rem;
 

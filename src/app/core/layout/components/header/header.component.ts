@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {RouterLink} from '@angular/router';
 import {TranslateModule, TranslatePipe, TranslateService} from '@ngx-translate/core';
 import {FormsModule} from '@angular/forms';
-import {LanguageSelectorComponent} from '@app/core/language-selector/language-selector.component';
+import {LanguageSelectorComponent} from '@app/shared/language-selector/language-selector.component';
 
 @Component({
   selector: 'app-header',

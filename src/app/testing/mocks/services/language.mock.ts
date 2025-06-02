@@ -1,7 +1,7 @@
 import { signal } from '@angular/core';
 
-import type { LanguageService } from '@app/shared/services/language.service';
-import type { Language } from '@app/shared/config/language.config';
+import type { LanguageService } from '@app/core/services/language/language.service';
+import type { Language } from '@app/core/services/language/language.config';
 
 export const mockSupportedLanguages: Language[] = [
   { code: 'pl', label: 'Polski' },

@@ -1,9 +1,9 @@
-import {ChangeDetectionStrategy, Component, ElementRef, OnInit, signal, ViewChild, WritableSignal} from '@angular/core';
+import { Component, ElementRef, OnInit, signal, ViewChild, WritableSignal} from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { NgClass } from '@angular/common';
 
-import { LanguageService } from '@app/shared/services/language.service';
-import {Language} from '@app/shared/config/language.config';
+import { LanguageService } from '@app/core/services/language/language.service';
+import {Language} from '@app/core/services/language/language.config';
 
 @Component({
   selector: 'language-selector',

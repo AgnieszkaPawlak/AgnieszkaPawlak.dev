@@ -3,7 +3,7 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { UpperCasePipe } from '@angular/common';
 
 import { TypingEffectComponent } from '@app/shared/typing-effect/typing-effect.component';
-import { LanguageService } from '@app/shared/services/language.service';
+import { LanguageService } from '@app/core/services/language/language.service';
 import { SkillsComponent } from '@app/features/skills/skills.component';
 
 @Component({
