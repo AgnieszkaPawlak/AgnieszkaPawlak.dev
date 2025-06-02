@@ -3,7 +3,7 @@ import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-tran
 
 import { HomeComponent } from './home.component';
 import { LanguageServiceMock } from '@app/testing/mocks/services/language.mock';
-import { LanguageService } from '@app/shared/services/language.service';
+import { LanguageService } from '@app/core/services/language/language.service';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;

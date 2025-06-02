@@ -3,7 +3,7 @@
     "welcome": "Witaj",
     "description": "Jestem programistą z pasją do tworzenia intuicyjnych i niezawodnych rozwiązań programistycznych.",
     "about": "O mnie",
-    "aboutDescription": "Moje doświadczenie obejmuje dostarczanie wysokiej jakości bibliotek frontendowych oraz zapewnianie bezbłędnego działania aplikacji poprzez skrupulatne testowanie. Obecnie poszerzam swoją wiedzę, aby zostać pełnoprawnym deweloperem full-stack, ucząc się Javy i wzorców projektowych obiektowego programowania na backendzie."
+    "aboutDescription": "Moje doświadczenie obejmuje dostarczanie wysokiej jakości bibliotek frontendowych oraz zapewnianie bezbłędnego działania aplikacji poprzez skrupulatne testowanie."
   },
   "skills": {
     "title": "Techniczne umiejętności"

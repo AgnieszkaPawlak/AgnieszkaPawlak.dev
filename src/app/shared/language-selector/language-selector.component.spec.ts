@@ -1,29 +1,30 @@
-import {TranslateFakeLoader, TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {TranslateFakeLoader, TranslateLoader, TranslateModule} from '@ngx-translate/core';
 
-import { ContactComponent } from './contact.component';
-import { LanguageService } from '@app/shared/services/language.service';
+import { LanguageSelectorComponent } from './language-selector.component';
+import { LanguageService } from '@app/core/services/language/language.service';
 import { LanguageServiceMock } from '@app/testing/mocks/services/language.mock';
 
-describe('ContactComponent', () => {
-  let component: ContactComponent;
-  let fixture: ComponentFixture<ContactComponent>;
+describe('LanguageSelectorComponent', () => {
+  let component: LanguageSelectorComponent;
+  let fixture: ComponentFixture<LanguageSelectorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ContactComponent, TranslateModule.forRoot({
-        loader: {
+      imports: [LanguageSelectorComponent, TranslateModule.forRoot({
+        loader : {
           provide: TranslateLoader,
           useClass: TranslateFakeLoader
         }
-      })],
+      }),
+      ],
       providers: [
         { provide: LanguageService, useFactory: LanguageServiceMock }
-      ]
+      ],
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ContactComponent);
+    fixture = TestBed.createComponent(LanguageSelectorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

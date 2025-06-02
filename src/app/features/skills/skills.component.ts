@@ -22,7 +22,6 @@ export class SkillsComponent {
         {id: 3, title: "JavaScript"},
         {id: 4, title: "TypeScript"},
         {id: 5, title: "Angular"},
-        {id: 6, title: "React",},
       ]
     },
     {
@@ -32,7 +31,6 @@ export class SkillsComponent {
         {id: 1, title: "Java"},
         {id: 2, title: "Node"},
         {id: 3, title: "Nest"},
-        {id: 4, title: "Lombok"},
         {id: 5, title: "Rest API"},
         {id: 6, title: "SQL"},
         {id: 7, title: "MongoDB/Postgres"},
@@ -57,6 +55,7 @@ export class SkillsComponent {
         {id: 1, title: "Karma"},
         {id: 2, title: "Jasmine"},
         {id: 3, title: "Cypress"},
+        {id: 4, title: "JMeter"},
       ]
     },
     {
