@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "year": 2018,
+    "cover": "assets/images/atomic-habits.jpg"
+  },
+  {
+    "title": "The Five Dysfunctions of a Team",
+    "author": "Patrick Lencioni",
+    "year": 2002,
+    "cover": "assets/images/the-five-dysfunctions-of-a-team.jpg"
+  },
+  {
+    "title": "The Clean Coder",
+    "author": "Robert C. Martin",
+    "year": 2011,
+    "cover": "assets/images/the-clean-coder.jpg"
+  },
+  {
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "year": 2008,
+    "cover": "assets/images/clean-code.jpg"
+  },
+  {
+    "title": "Reactive Patterns with RxJS",
+    "author": "Sergey Makoveev",
+    "year": 2020,
+    "cover": "assets/images/reactive-patterns-with-rxjs.jpg"
+  },
+  {
+    "title": "REST API Design Rulebook",
+    "author": "Mark Masse",
+    "year": 2011,
+    "cover": "assets/images/rest-api.jpg"
+  },
+  {
+    "title": "Are Your Lights On?",
+    "author": "Donald C. Gause, Gerald M. Weinberg",
+    "year": 1990,
+    "cover": "assets/images/are-your-lights-on.jpg"
+  },
+  {
+    "title": "The Art of War",
+    "author": "Sun Tzu; Sun Pin; D. E. Tarver",
+    "year": 2002,
+    "cover": "assets/images/the-art-of-war.jpg"
+  }
+]

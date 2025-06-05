@@ -1,0 +1,29 @@
+.books-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.books-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.books-title {
+  font-size: 3.125rem;
+
+}
+
+.books-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3.125rem;
+  width: 100%;
+
+}

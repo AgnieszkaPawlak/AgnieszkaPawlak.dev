@@ -1,0 +1,12 @@
+<div class="book-card">
+  @if (cover()) {
+    <img [src]="cover()" [alt]="title()" class="book-cover" />
+  }
+  <div class="book-info">
+    <h3 class="book-title">{{ title() }}</h3>
+    @if (year()) {
+      <p class="book-author">{{ author() }} <span>({{ year() }})</span></p>
+    }
+  </div>
+</div>
+

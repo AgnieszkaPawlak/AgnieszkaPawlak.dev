@@ -1,0 +1,15 @@
+<div class="books-container">
+  <div class="books-content">
+    <h1 class="books-title">Collection of books that I've read</h1>
+    <div class="books-list">
+      @for (book of books(); track book.title) {
+        <app-book
+          [title]="book.title"
+          [author]="book.author"
+          [year]="book.year"
+          [cover]="book.cover"
+        />
+      }
+    </div>
+  </div>
+</div>

@@ -20,8 +20,10 @@
     "baseUrl": "./",
     "paths": {
       "@app/*": [
-        "src/app/*"]
-      },
+        "src/app/*"],
+      "@asset/*": [
+        "src/assets/*"]
+    },
     },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
