@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {RouterLink} from '@angular/router';
+import {RouterModule} from '@angular/router';
 import {TranslateModule, TranslatePipe, TranslateService} from '@ngx-translate/core';
 import {FormsModule} from '@angular/forms';
 import {LanguageSelectorComponent} from '@app/shared/language-selector/language-selector.component';
 
 @Component({
   selector: 'app-header',
-  imports: [TranslateModule, CommonModule, RouterLink, TranslatePipe, FormsModule, LanguageSelectorComponent],
+  imports: [TranslateModule, CommonModule, RouterModule, TranslatePipe, FormsModule, LanguageSelectorComponent],
   templateUrl: './header.component.html',
   standalone: true,
   styleUrl: './header.component.scss'
