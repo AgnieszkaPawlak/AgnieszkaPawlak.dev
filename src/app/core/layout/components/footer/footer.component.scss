@@ -1,12 +1,12 @@
-@use '../../../../../styles/sizes';
-@use '../../../../../styles/colors';
+@use 'colors';
+@use 'sizes';
 
 .footer {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: colors.$footer-background-color;
+  background-color: colors.$black-color;
   z-index: 10;
   padding: 0.5rem;
 
