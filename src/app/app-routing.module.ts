@@ -11,10 +11,6 @@ export const routes: Routes = [
     loadComponent: () => import('@app/features/home/home.component').then(m => m.HomeComponent),
   },
   {
-    path: 'contact',
-    loadComponent: () => import('@app/features/contact/contact.component').then(m => m.ContactComponent),
-  },
-  {
     path: 'books',
     loadComponent: () => import('@app/features/books/books.component').then(m => m.BooksComponent),
   },
