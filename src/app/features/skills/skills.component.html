@@ -3,13 +3,13 @@
 
   <div class="skills__content">
     <div class="skills__content__list">
-      @for (skill of data; track skill.id) {
+      @for (skill of data; track skill.label) {
         <div class="skills__content__list-item">
           <h2 class="skills__content__list-item-title">
             {{skill.label }}
           </h2>
           <ul class="skills__content__list-item-content">
-            @for (el of skill.content; track el.id) {
+            @for (el of skill.content; track el.title) {
               <li class="skills__content__list-item-content-element">
                 <p>
                   {{el.title}}

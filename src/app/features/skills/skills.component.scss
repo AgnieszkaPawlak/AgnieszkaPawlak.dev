@@ -1,3 +1,6 @@
+@use 'colors';
+@use 'sizes';
+
 :host {
   display: flex;
   width: 70%;
@@ -46,7 +49,7 @@
 
         &:hover {
           background-color: gray;
-          color: white;
+          color: colors.$white-color;
           box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0px;
           transform:   scale(1.05);
         }
