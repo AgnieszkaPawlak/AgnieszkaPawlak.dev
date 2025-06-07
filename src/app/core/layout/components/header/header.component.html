@@ -3,7 +3,7 @@
     <p>&lt;AP/&gt;</p>
   </div>
   <div class="navbar__container">
-    <ul class="navbar__nav">
+    <ul class="navbar__nav" [class.navbar__nav--active]="menuOpen()">
       @for (link of navLinks; track link.label) {
         <li class="navbar__nav-item">
           <a class="navbar__nav-item-link" [routerLink]="link.path">
@@ -14,5 +14,8 @@
     </ul>
   </div>
 
+  <button class="navbar__toggle" (click)="toggleNavbar()">
+    <img src="assets/icons/menu.svg" alt="Toggle Navbar" />
+  </button>
   <language-selector></language-selector>
 </nav>

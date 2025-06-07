@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {TranslateModule, TranslatePipe, TranslateService} from '@ngx-translate/core';
@@ -13,6 +13,8 @@ import {LanguageSelectorComponent} from '@app/shared/language-selector/language-
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  menuOpen = signal(false);
+
   currentLanguage = 'en';
   constructor(private translate: TranslateService) {
     this.currentLanguage = this.translate.currentLang || 'en';
@@ -24,8 +26,11 @@ export class HeaderComponent {
     {label: "nav.label.home", path: './home'},
     {label: "nav.label.books", path: './books'},
     {label: "nav.label.articles", path: './articles'},
-    {label: "nav.label.contact", path: './contact'}
   ]
+
+  toggleNavbar() {
+    this.menuOpen.update(open => !open);
+  }
 
   switchLanguage(language: string): void {
     this.currentLanguage = language;
