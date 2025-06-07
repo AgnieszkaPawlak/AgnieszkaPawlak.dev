@@ -1,12 +1,12 @@
-@use '../../../styles/colors';
-@use '../../../styles/sizes';
+@use 'colors';
+@use 'sizes';
 
 .language-selector {
   position: relative;
   display: inline-block;
 
   &__button {
-    color: colors.$gray-dark;
+    color: colors.$white-color;
     cursor: pointer;
     background: none;
     border: none;
@@ -18,7 +18,7 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 
     &:hover {
-      background-color: colors.$dropdown-hover-bg;
+      color: colors.$green-primary;
     }
   }
 
@@ -27,7 +27,7 @@
     top: 100%;
     right: 0;
     z-index: 10;
-    background: colors.$white-color;
+    background: colors.$black-color;
     border: 1px solid colors.$gray-medium;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     min-width: sizes.$dropdown-min-width;
@@ -59,11 +59,11 @@
       transition: background-color 0.3s ease, color 0.3s ease;
 
       &:hover {
-        background-color: colors.$gray-light;
+        color: colors.$green-primary;
       }
 
       &--active {
-        background-color: colors.$blue-light;
+        background-color: colors.$gray-dark;
         font-weight: bold;
       }
     }
