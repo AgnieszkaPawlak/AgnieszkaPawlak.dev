@@ -1,5 +1,5 @@
-@use '../../../../../styles/colors';
-@use '../../../../../styles/sizes';
+@use 'colors';
+@use 'sizes';
 
 .navbar {
   display: flex;
@@ -8,7 +8,7 @@
   padding: 0 sizes.$padding-lg;
 
   &--light {
-    background-color: colors.$blue-light;
+    background-color: colors.$black-color;
   }
 
   &__logo {
@@ -19,6 +19,19 @@
 
   &__container {
     flex-grow: 1;
+  }
+
+  &__toggle {
+    display: none;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    svg {
+      transition: transform 0.3s ease;
+    }
+
   }
 
   &__nav {
@@ -34,10 +47,13 @@
       margin: 0 sizes.$margin-sm;
 
       &-link {
+        color: colors.$white-color;
         text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: bold;
 
         &:hover {
-          color: colors.$blue-primary;
+          color: colors.$green-primary;
           text-decoration: underline;
         }
       }
@@ -47,15 +63,29 @@
 
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 
     &__nav {
       margin-top: sizes.$margin-sm;
       flex-direction: column;
+      display: none;
+
+      &--active {
+        display: flex;
+      }
 
       &-item {
         margin: sizes.$margin-xs 0;
+      }
+    }
+
+    &__toggle {
+      display: block;
+      &:hover {
+        scale: 1.1
+
       }
     }
   }

@@ -1,5 +1,5 @@
-@use '../../../styles/sizes';
-@use '../../../styles/colors';
+@use 'colors';
+@use 'sizes';
 
 :host {
   display: flex;
@@ -36,7 +36,7 @@
   &__about {
     h2 {
       margin-top: 0;
-      color: colors.$blue-secondary;
+      color: colors.$green-primary;
     }
   }
 }
