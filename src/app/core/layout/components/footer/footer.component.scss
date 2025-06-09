@@ -2,6 +2,7 @@
 @use 'sizes';
 
 .footer {
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,11 +17,23 @@
   }
 
   &__container {
+    display: flex;
     width: 100%;
-    text-align: center;
+    gap: sizes.$gap-base;
+    color: colors.$white-color;
+  }
 
-    &__text {
-      font-size: sizes.$font-small;
+  &__text {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    font-size: sizes.$font-small;
+  }
+
+  &__link {
+    all: unset;
+    &:hover {
+      color: colors.$green-primary;
     }
   }
 }
