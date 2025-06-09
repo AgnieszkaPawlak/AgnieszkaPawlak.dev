@@ -10,8 +10,10 @@ export class TypingEffectComponent implements OnDestroy {
   readonly texts = input<string[]>([]);
   readonly speed = input(100);
   readonly delay = input(2000);
-
+  readonly stopWhenComplete = input(false);
   readonly displayText = signal('');
+
+  protected isCompleted = signal(false);
 
   private currentIndex = signal(0);
   private typingFrameId: number | null = null;
@@ -41,6 +43,12 @@ export class TypingEffectComponent implements OnDestroy {
           this.lastFrameTime = time;
         } else {
           this.typingFrameId = null;
+
+          if (this.stopWhenComplete() && this.currentIndex() === texts.length - 1) {
+            this.isCompleted.set(true);
+            return;
+          }
+
           setTimeout(() => this.startErasing(), this.delay());
           return;
         }
@@ -64,6 +72,10 @@ export class TypingEffectComponent implements OnDestroy {
           this.lastFrameTime = time;
         } else {
           this.erasingFrameId = null;
+
+          if (this.stopWhenComplete() && this.currentIndex() === texts.length - 1) {
+            return;
+          }
           this.currentIndex.update(i => (i + 1) % texts.length);
           this.startTyping();
           return;

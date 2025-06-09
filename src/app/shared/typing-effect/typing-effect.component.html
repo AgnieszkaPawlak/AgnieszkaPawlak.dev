@@ -1,4 +1,4 @@
-<div class="typing-effect">
+<div class="typing-effect" [class.completed]="isCompleted()">
   <span class="typing-effect__text">{{ displayText() }}</span>
   <span class="typing-effect__cursor"></span>
 </div>
