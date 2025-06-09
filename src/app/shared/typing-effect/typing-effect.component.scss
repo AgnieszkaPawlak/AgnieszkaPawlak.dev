@@ -17,11 +17,16 @@
     display: inline-block;
     height: 1.2rem;
   }
+
+  &.completed .typing-effect__cursor {
+    border-right: none;
+    animation: none;
+  }
 }
 
 @keyframes blink {
   0%, 100% {
-   border-color: colors.$blue-secondary;
+   border-color: colors.$white-color;
   }
   50% {
     border-color: transparent;
