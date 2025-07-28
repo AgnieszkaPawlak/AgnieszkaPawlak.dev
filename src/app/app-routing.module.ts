@@ -15,6 +15,10 @@ export const routes: Routes = [
     loadComponent: () => import('@app/features/books/books.component').then(m => m.BooksComponent),
   },
   {
+    path: 'ux-design',
+    loadComponent: () => import('@app/features/ux-design/ux-design.component').then(m => m.UxDesignComponent),
+  },
+  {
     path: 'articles',
     loadComponent: () => import('@app/features/articles/articles.component').then(m => m.ArticlesComponent),
   },

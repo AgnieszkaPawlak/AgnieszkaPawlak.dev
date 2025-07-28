@@ -1,0 +1,17 @@
+<div class="ux-design-container">
+  <h1>UX Design Projects</h1>
+  <p>Explore my Figma projects below:</p>
+  @for(project of projects; track project.title) {
+    <div class="iframe-container">
+    <iframe
+      [src]="project.url"
+      loading="lazy"
+      width="100%"
+      height="100%"
+      allowfullscreen>
+    </iframe>
+    </div>
+  }
+</div>
+
+

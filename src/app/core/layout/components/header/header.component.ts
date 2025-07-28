@@ -25,6 +25,7 @@ export class HeaderComponent {
   navLinks = [
     {label: "nav.label.home", path: './home'},
     {label: "nav.label.books", path: './books'},
+    {label: "nav.label.ux-designs", path: './ux-design'},
     {label: "nav.label.articles", path: './articles'},
   ]
 
